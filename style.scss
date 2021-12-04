@@ -1,0 +1,598 @@
+@import url("https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Oxygen:wght@300;400;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  text-transform: capitalize;
+  transition: all 0.3s linear;
+  font-family: "Outfit", sans-serif;
+}
+$white: #fff;
+$crimson: #32c1cd;
+$black: #0d0d0d;
+$light-bg: #1a1a1a;
+$light-color: #aaaaaa;
+$box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.7);
+
+html {
+  overflow-x: hidden;
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+  scroll-padding-top: 9rem;
+
+  &::-webkit-scrollbar {
+    width: 1rem;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: $black;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: $crimson;
+  }
+}
+
+section {
+  padding: 3rem 9%;
+}
+
+.btn {
+  color: #fff;
+  outline: none;
+  padding: 0.7rem 2.5rem;
+  background: transparent;
+  cursor: pointer;
+  border: 1px solid $crimson;
+  font-size: 2rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  position: relative;
+  z-index: 2;
+  border-radius: 10rem;
+  &:before {
+    background: $crimson;
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    width: 0%;
+    height: 100%;
+    transition: all 0.7s ease;
+    border-radius: 10rem;
+  }
+  &:hover:before {
+    width: 100%;
+  }
+  &:hover {
+    color: $white;
+  }
+}
+
+body {
+  background: $black;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+nav {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+  z-index: 500;
+  align-items: flex-end;
+
+  a {
+    font-size: 2rem;
+    padding: 2rem;
+    background: $light-bg;
+    color: $white;
+    font-weight: 200;
+    flex: 1;
+    text-align: center;
+    i {
+      color: $crimson;
+      padding-right: 1rem;
+    }
+    &:hover {
+      background: $crimson;
+      padding-bottom: 5rem;
+      i {
+        color: $white;
+      }
+    }
+  }
+}
+
+.home {
+  height: 100vh;
+  background-image: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.7) 21%,
+      rgba(0, 0, 0, 0.7959558823529411) 100%
+    ),
+    url(./imgs/home.jpg);
+  background-position: center;
+  background-size: cover;
+  .container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .content {
+      text-align: center;
+      h1 {
+        text-align: center;
+        color: $white;
+        font-size: 5.5rem;
+        margin-bottom: 2rem;
+        span {
+          color: $crimson;
+        }
+      }
+      .fab {
+        font-size: 3rem;
+        margin-left: 1rem;
+      }
+
+      .fa-facebook-f {
+        color: $crimson;
+        &:hover {
+          color: #1877f2;
+        }
+      }
+      .fa-twitter {
+        color: $crimson;
+        &:hover {
+          color: #1da1f2;
+        }
+      }
+      .fa-github {
+        color: $crimson;
+        &:hover {
+          color: #000;
+        }
+      }
+    }
+  }
+}
+//about
+.about {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+  gap: 1rem;
+
+  .container {
+    padding: 10rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap-reverse;
+    .image {
+      flex: 1 1 40rem;
+      text-align: center;
+      img {
+        width: 70%;
+      }
+    }
+    .content {
+      flex: 1 1 40rem;
+      color: $white;
+      h3 {
+        font-size: 1.5rem;
+      }
+      h2 {
+        font-size: 4rem;
+        color: $crimson;
+      }
+      p {
+        font-size: 2rem;
+        margin-bottom: 5rem;
+      }
+      .button {
+        margin-bottom: 5rem;
+      }
+    }
+  }
+  
+  .skills{
+    h2{
+      text-align: center;
+      font-size: 4rem;
+    color: $crimson;
+    margin-top: 3rem;
+      margin-bottom: 5rem;
+    }
+    width: 100%;
+    max-width: 50%;
+    padding-bottom: 10rem;
+    .skill{
+      margin-bottom: 3rem;
+    }
+
+    .skillname{
+        font-size: 2rem;
+        font-weight: 700;
+        color: $white;
+        margin: 1rem 0;
+    }
+    .skill-bar{
+        height: 2rem;
+        background-color: $light-bg;
+        border-radius: 1rem;
+    }
+    .skillper{
+      height: 2rem;
+        background-color: $crimson;
+        position: relative;
+        border-radius: 1rem;
+        animation: fillbar 3s ;
+    
+        &::before{
+            content: attr(per);
+            position: absolute;
+            color: $white;
+            background-color: $crimson;
+            top: -3.4rem;
+            right: 0;
+            font-size: 1.2rem;
+            padding: .7rem 1.2rem;
+            border-radius: 6px;
+            transform: translate(50%);
+        }
+        
+    }
+}
+@keyframes fillbar{
+    from{
+        width: 0;
+    }
+    to{
+        width: 100%;
+    }
+}
+}
+
+//services
+
+.service {
+  display: flex;
+  flex-direction: column;
+align-items: center;
+justify-content: center;
+  .heading {
+    font-size: 4rem;
+    color: $crimson;
+    margin-top: 3rem;
+  }
+  .container{
+    padding: 10rem 0;
+display: flex;
+justify-content: center;
+flex-wrap: wrap;
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+      .boxcontainer{
+    display: flex;
+    align-items: center;
+
+    h2 {
+      color: $crimson;
+      font-size: 2rem;
+      &:hover h2 {
+        color: $light-bg;
+      }
+    }
+  }
+      .box {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 13rem;
+        width: 13rem;
+        background: $light-bg;
+        cursor: pointer;
+        text-align: center;
+        margin: 2rem;
+        border-radius: 0.5rem;
+        &:hover {
+          background: $crimson;
+          .fas {
+            transform: scale(1.1);
+          }
+        }
+  
+        .fas {
+          font-size: 5rem;
+          color: $crimson;
+        }
+  
+  
+        &:hover .fas {
+          color: $light-bg;
+        }
+  
+        
+      }
+    }
+  }
+}
+
+//works
+
+.portfolio {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-bottom: 10rem;
+  .heading {
+    font-size: 4rem;
+    text-align: center;
+    color: $crimson;
+    margin-bottom: 3rem;
+    margin-top: 3rem;
+  }
+  .workscontainer {
+    display: flex;
+    padding: 10rem 0 0 0;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    .box {
+      height: 30rem;
+      width: 25rem;
+      overflow-y: hidden;
+      text-align: center;
+      margin: 2rem;
+      border-radius: 0.5rem;
+      position: relative;
+      overflow: hidden;
+     
+
+      img {
+        width: 100%;
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
+      .content {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        background-color: $light-bg;
+        height: 5rem;
+        a {
+          font-size: 1.8rem;
+          line-height: 5rem;
+          margin: 2rem;
+          color: $crimson;
+          &:hover{
+            opacity: .5;
+          }
+        }
+      }
+    }
+  }
+  .btn{
+    &:hover a{
+      color: $white;
+    }
+    a{
+      color: $crimson;
+    }
+
+  }
+}
+
+//media quieries
+
+@media (max-width: 1200px) {
+  html {
+    font-size: 55%;
+  }
+}
+
+@media (max-width: 991px) {
+  html {
+    font-size: 55%;
+  }
+  .about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+    gap: 1rem;
+
+    .container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      .image {
+        width: 50%;
+        text-align: center;
+        margin-bottom: 5rem;
+
+        img {
+          width: 50%;
+        }
+      }
+      .content {
+        color: $white;
+        h3 {
+          font-size: 1.5rem;
+        }
+        h2 {
+          font-size: 4rem;
+          color: $crimson;
+        }
+        p {
+          font-size: 2rem;
+
+          margin-bottom: 5rem;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  nav {
+    a {
+      i {
+        padding: 0;
+      }
+
+      span {
+        display: none;
+      }
+    }
+  }
+  .home {
+    .container {
+      .content {
+        h1 {
+          font-size: 3.5rem;
+        }
+        .fab {
+          font-size: 2.5rem;
+        }
+      }
+    }
+  }
+  .about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+    gap: 1rem;
+
+    .container {
+      .image {
+        display: none;
+      }
+      .content {
+        flex: 1 1 40rem;
+        color: $white;
+        h3 {
+          font-size: 1.5rem;
+        }
+        h2 {
+          font-size: 4rem;
+          color: $crimson;
+        }
+        p {
+          font-size: 2rem;
+          margin-bottom: 5rem;
+        }
+        .button {
+          margin-bottom: 5rem;
+        }
+      }
+    }
+    .skills{
+      width: 90%;
+      max-width: 90%;
+      padding-bottom: 10rem;
+      .skill{
+        margin-bottom: 3rem;
+      }
+  
+      .skillname{
+          font-size: 1.5rem;
+          font-weight: 500;
+          color: $white;
+          margin: 1rem 0;
+      }
+      .skill-bar{
+          height: 2rem;
+          background-color: $white;
+          border-radius: 1rem;
+      }
+      .skillper{
+        height: 2rem;
+          background-color: $crimson;
+          position: relative;
+          border-radius: 1rem;
+          animation: fillbar 2s ;
+      
+          &::before{
+              content: attr(per);
+              position: absolute;
+              color: $white;
+              background-color: $crimson;
+              top: -3.4rem;
+              right: 0;
+              font-size: 1.2rem;
+              padding: .7rem 1.2rem;
+              border-radius: 6px;
+              transform: translate(50%);
+          }
+          
+      }
+  }
+  }
+
+  .service {
+    display: flex;
+    flex-direction: column;
+  align-items: center;
+  justify-content: center;
+    .heading {
+      font-size: 4rem;
+      color: $crimson;
+      margin-top: 3rem;
+    }
+    .container{
+      padding: 10rem 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+      .row {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        .boxcontainer{
+      display: flex;
+      align-items: center;
+  
+      h2 {
+        color: $crimson;
+        font-size: 2rem;
+        &:hover h2 {
+          color: $light-bg;
+        }
+      }
+    }
+        .box {
+          height: 10rem;
+          width: 10rem;
+          .fas {
+            font-size: 4rem;
+          }
+        }
+      }
+    }
+  }
+
+}
