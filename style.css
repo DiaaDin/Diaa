@@ -130,10 +130,11 @@ nav a:hover i {
 
 .home {
   height: 100vh;
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(21%, rgba(0, 0, 0, 0.7)), to(rgba(0, 0, 0, 0.795956))), url(https://images.pexels.com/photos/160107/pexels-photo-160107.jpeg);
-  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.7) 21%, rgba(0, 0, 0, 0.795956) 100%), url(https://images.pexels.com/photos/160107/pexels-photo-160107.jpeg);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(21%, rgba(0, 0, 0, 0.7)), to(rgba(0, 0, 0, 0.795956))), url("./imgs/home.jpg");
+  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.7) 21%, rgba(0, 0, 0, 0.795956) 100%), url("./imgs/home.jpg");
   background-position: center;
   background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .home .container {
@@ -212,6 +213,7 @@ nav a:hover i {
 }
 
 .about .container {
+  min-height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -223,7 +225,6 @@ nav a:hover i {
           justify-content: center;
   -ms-flex-wrap: wrap-reverse;
       flex-wrap: wrap-reverse;
-  min-height: 100vh;
 }
 
 .about .container .image {

@@ -121,9 +121,11 @@ nav {
       rgba(0, 0, 0, 0.7) 21%,
       rgba(0, 0, 0, 0.7959558823529411) 100%
     ),
-    url(https://images.pexels.com/photos/160107/pexels-photo-160107.jpeg);
+    url("./imgs/home.jpg");
   background-position: center;
   background-size: cover;
+  background-repeat: no-repeat;
+  
   .container {
     height: 100%;
     display: flex;
@@ -176,11 +178,11 @@ nav {
   gap: 1rem;
   
   .container {
+    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap-reverse;
-    min-height: 100vh;
     .image {
       flex: 1 1 40rem;
       text-align: center;
