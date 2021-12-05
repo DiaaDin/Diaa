@@ -223,7 +223,7 @@ nav a:hover i {
           justify-content: center;
   -ms-flex-wrap: wrap-reverse;
       flex-wrap: wrap-reverse;
-  min-height: 90vh;
+  min-height: 100vh;
 }
 
 .about .container .image {
