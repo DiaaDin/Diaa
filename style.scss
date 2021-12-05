@@ -121,7 +121,7 @@ nav {
       rgba(0, 0, 0, 0.7) 21%,
       rgba(0, 0, 0, 0.7959558823529411) 100%
     ),
-    url(./imgs/home.jpg);
+    url(https://images.pexels.com/photos/160107/pexels-photo-160107.jpeg);
   background-position: center;
   background-size: cover;
   .container {
@@ -182,6 +182,8 @@ nav {
     align-items: center;
     justify-content: center;
     flex-wrap: wrap-reverse;
+  min-height: 100vh;
+
     .image {
       flex: 1 1 40rem;
       text-align: center;
@@ -351,7 +353,7 @@ flex-wrap: wrap;
   }
   .workscontainer {
     display: flex;
-    padding: 10rem 0 0 0;
+    padding: 5rem 0 0 0;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
